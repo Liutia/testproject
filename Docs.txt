@@ -1,0 +1,15 @@
+Installation Docks
+1. Install docker and docker-compose
+2. Download and export project in file
+3. Open folder with project in terminal
+4. Run docker with command "docker-compose up -d"
+
+Architecture Docks
+1. This site have 3 pages:
+ - Login
+ - Register
+ - Main
+
+2. On Login page you can Login or go to register user after Login you will be redirected to the main page
+3. On Register page you can Register user or go back. After Register you will be redirected to the Login page
+4. On Main page you we can watch list films, add film, remove film, import films from example txt file or other with same structure and Logout.
