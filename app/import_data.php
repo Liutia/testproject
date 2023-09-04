@@ -21,8 +21,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Process the uploaded text file
             $temp_file = $file["tmp_name"];
 
-            $database->createFilmsTable();
-
             // Read and import data from the text file into your database
             $lines = file($temp_file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
             foreach ($lines as $line) {

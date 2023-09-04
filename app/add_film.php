@@ -13,8 +13,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Create a database connection
     $mysqli = $database->connectDb();
 
-    $database->createFilmsTable();
-
     $sql = "INSERT INTO films (title, release_year, format, stars) VALUES ('$title', '$release_year', '$format', '$stars')";
 
     if (mysqli_query($mysqli, $sql)) {

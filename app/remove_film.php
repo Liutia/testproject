@@ -18,8 +18,6 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     // Create a database connection
     $mysqli = $database->connectDb();
 
-    $database->createFilmsTable();
-
     $sql = "DELETE FROM films WHERE id='$film_id'";
 
     if (mysqli_query($mysqli, $sql)) {

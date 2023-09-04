@@ -13,8 +13,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $mysqli = $database->connectDb();
 
-    $database->createUsersTable();
-
     $sql = "SELECT * FROM users WHERE username = '$username'";
 
     // Validate the input

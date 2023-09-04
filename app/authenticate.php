@@ -12,8 +12,6 @@ $mysqli = $database->connectDb();
 $username = $_POST['username'];
 $password = $_POST['password'];
 
-$database->createUsersTable();
-
 // Query the database to check if the user exists
 $sql = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
 
