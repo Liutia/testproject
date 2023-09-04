@@ -39,8 +39,6 @@ $database = new Database();
     // Create a database connection
     $mysqli = $database->connectDb();
 
-    $database->createFilmsTable();
-
     $sql = "SELECT id, title, release_year, format, stars FROM films";
 
     $result = $mysqli->query($sql);
