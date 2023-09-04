@@ -13,6 +13,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $mysqli = $database->connectDb();
 
+    $database->createUsersTable();
+
     $sql = "SELECT * FROM users WHERE username = '$username'";
 
     // Validate the input
@@ -29,8 +31,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "<br><br><a href='login.php'>Login</a><br>
         <a href='registration.php'>Registration</a>";
     } else {
-        $database->createUsersTable();
-
         // Insert the user data into the database
         $sql = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
 
