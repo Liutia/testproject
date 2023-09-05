@@ -14,7 +14,7 @@ $database = new Database();
 ?>
 
 <!DOCTYPE html>
-<html>
+<html  lang="uk">
 <head>
     <script src="script.js"></script>
     <title>Film Database</title>
@@ -28,6 +28,7 @@ $database = new Database();
 
 <!-- Display the table of films -->
 <table border="1" id="table" >
+    <thead>
     <tr>
         <th>Title</th>
         <th>Release Year</th>
@@ -35,6 +36,7 @@ $database = new Database();
         <th>Stars</th>
         <th>Remove</th>
     </tr>
+    </thead>
     <?php
     // Create a database connection
     $mysqli = $database->connectDb();
@@ -62,16 +64,19 @@ $database = new Database();
 <h2>Add a Film</h2>
 <form action="add_film.php" method="post">
     <label for="title">Title:</label>
-    <input type="text" name="title" required><br>
+    <input type="text" name="title" pattern="^[а-яА-Яa-zA-ZґҐЁёІіЇїЄє0-9][а-яА-Яa-zA-Z0-9ґҐЁёІіЇїЄє'’ʼ\s:,\-]+" required><br>
 
     <label for="year">Release Year:</label>
-    <input type="number" name="year" required><br>
-
+    <input type="number" name="year" required min="1895"><br>
     <label for="format">Format:</label>
-    <input type="text" name="format" required><br>
+    <select name="format">
+        <option value="VHS" selected>VHS</option>
+        <option value="DVD">DVD</option>
+        <option value="Blu-Ray">Blu-Ray</option>
+    </select><br>
 
     <label for="stars">Stars:</label>
-    <input type="text" name="stars" required><br>
+    <input type="text" name="stars" pattern="^[а-яА-Яa-zA-ZґҐЁёІіЇїЄє][а-яА-Яa-zA-ZґҐЁёІіЇїЄє'’ʼ\s,\-]+" required><br>
 
     <input type="submit" value="Add Film">
 </form>
